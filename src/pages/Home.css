@@ -1,0 +1,159 @@
+/* General */
+
+.home-card
+{
+    height: fit-content;
+    padding: 40em 10em 40em 10em;
+    display: flex;
+    justify-content: left;
+    position: relative;
+}
+
+.section-title
+{
+    font-size: 30pt;
+    border-bottom: 2pt solid;
+    border-left: 10pt;
+}
+
+/* Welcome banner */
+
+.welcome
+{
+    padding: 7em;
+    background-color: #ecece1;
+    height: 40pc;
+}
+
+.subtitle
+{
+    margin-top: -2pc;
+    margin-left: 5pc;
+}
+
+.dino-welcome
+{
+    position: absolute;
+    right: 10pc;
+    margin: auto;
+    background-image: url('/dino_anim.gif') !important;
+}
+
+/* About Me banner */
+
+.aboutme
+{
+    background-color: #8aadb6;
+}
+
+.about-card
+{
+    position: relative;
+    left: 40%;
+}
+
+.about-desc
+{
+    background-color: white;
+    color: #011936;
+    border: 10px solid #011936;
+    border-radius: 10px;
+    box-shadow: -8px 8px rgba(0.05, 0.18, 0.5, 0.5);
+    padding: 10px;
+    width: 30pc;
+    height: 42pc;
+    position: relative;
+    rotate: 1deg;
+    z-index: 4;
+}
+
+.dir-button
+{
+    border: solid;
+    border-radius: 50px;
+    padding: 10px;
+    position: absolute;
+    right: 20px;
+    scale: 1;
+    animation: 200ms ease-out 0ms scale_in;
+}
+
+.dir-button:hover
+{
+    border: solid;
+    border-radius: 50px;
+    padding: 10px;
+    position: absolute;
+    right: 20px;
+    scale: 1.05;
+    animation: 200ms ease-out 0ms scale_out;
+}
+
+.dino-aboutme
+{
+    position: absolute;
+    right: 20%;
+    top: 0%;
+}
+
+/* My projects banner */
+
+.myprojects
+{
+    background-color: #dbd4c2;
+}
+
+.prj-desc
+{
+    width: 40em;
+    height: 30em;
+    position: relative;
+}
+
+.prj-dino
+{
+    position: absolute;
+    transform-origin: 40% 80%;
+    background-image: url("/dino_blink.gif") !important;
+}
+
+.prj-button
+{
+    border: solid;
+    border-radius: 50px;
+    padding: 10px;
+    position: absolute;
+    scale: 2;
+    z-index: 5;
+    background-color: white;
+    bottom: 30%;
+    left: 35%;
+}
+
+.prj-button:hover
+{
+    animation: 1s ease-out 0s hover_move;
+}
+
+/* Animations */
+
+@keyframes scale_in
+{
+    from {scale: 1.05;}
+    to {scale: 1;}
+}
+
+@keyframes scale_out
+{
+    from {scale: 1;}
+    to {scale: 1.05;}
+}
+
+@keyframes hover_move
+{
+    from {bottom: 30%; left: 35%;}
+    25% {bottom: 30%; left: 38%;}
+    50% {bottom: 30%; left: 35%;}
+    75% {bottom: 30%; left: 37%;}
+    to {bottom: 30%; left: 35%;}
+}

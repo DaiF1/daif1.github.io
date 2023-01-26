@@ -1,0 +1,48 @@
+body
+{
+    font-family: "Cabin";
+    font-size: 16pt;
+
+    color: #011936;
+    margin: 0pt;
+
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+h1
+{
+    font-family: "Indie Flower";
+    font-size: 110pt;
+    margin-bottom: 0px;
+}
+
+h2
+{
+    font-family: "IBM Plex Mono";
+    font-size: 20pt;
+    width: fit-content;
+    height: fit-content;
+}
+
+a
+{
+    text-decoration: none;
+    color: #551A8B;
+}
+
+.img-reverse
+{
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.dino
+{
+    width: 40pc;
+    height: 40pc;
+    z-index: 1;
+    background-image: url("/dino.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}

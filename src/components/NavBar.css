@@ -1,0 +1,35 @@
+nav
+{
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0pt;
+    z-index: 10;
+    padding: 1pt;
+    margin: 0pt;
+    background-color: #fdfff8;;
+    border-bottom: 4pt solid #011936;
+}
+
+nav ul
+{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 6pt;
+}
+
+nav li
+{
+    list-style: none;
+}
+
+nav a
+{
+    color: #011936;
+    font-weight: normal;
+}
+
+nav a:hover
+{
+    color: #a0d728;
+    font-weight: bold;
+}
