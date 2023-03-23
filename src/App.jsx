@@ -3,9 +3,9 @@ import Hello from './components/Hello'
 import AboutMe from './components/AboutMe'
 import Projects from './components/Projects'
 
-const ABOUT_FLAG = 1000;
-const PROJECTS_FLAG = 2000;
-const END_OF_PAGE = 3000;
+const ABOUT_FLAG = 2000;
+const PROJECTS_FLAG = 3000;
+const END_OF_PAGE = 4000;
 
 class App extends React.Component
 {
@@ -20,11 +20,11 @@ class App extends React.Component
         this.setState((state, props) => {
             var delta = state.offsetY + e.deltaY
             if (delta < 0) delta = 0;
-            else if (delta > END_OF_PAGE) delta = 3000;
+            else if (delta > END_OF_PAGE) delta = END_OF_PAGE;
 
-            var comp = <Hello/>
-            if (delta > PROJECTS_FLAG) comp = <Projects/>
-            else if (delta > ABOUT_FLAG) comp = <AboutMe/>
+            var comp = <Hello delta={delta}/>
+            if (delta > PROJECTS_FLAG) comp = <Projects delta={delta}/>
+            else if (delta > ABOUT_FLAG) comp = <AboutMe delta={delta}/>
 
             return {component: comp, offsetY: delta}
         })
@@ -32,7 +32,7 @@ class App extends React.Component
 
     render() {
         return (
-            <div onWheelCapture={this.wheelCapture}>
+            <div id='main-page' onWheelCapture={this.wheelCapture}>
                 {this.state.component}
             </div>
         );
