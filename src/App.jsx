@@ -1,23 +1,36 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Layout from './components/Layout'
+import Hello from './components/Hello'
+import AboutMe from './components/AboutMe'
+import Projects from './components/Projects'
 
-import Home from './pages/Home'
-import Projects from './pages/Projects'
-import Resume from './pages/Resume'
+class App extends React.Component
+{
+    constructor(props) {
+        super(props)
+        this.state = {component: <Hello/>, offsetY: 0}
 
-function App() {
-    return (
-    <BrowserRouter>
-        <Routes>
-            <Route path="/" element={<Layout />}>
-                <Route index element={<Home />} />
-                <Route path="projects" element={<Projects />} />
-                <Route path="resume" element={<Resume />} />
-            </Route>
-        </Routes>
-    </BrowserRouter>
-    );
+        this.wheelCapture = this.wheelCapture.bind(this)
+    }
+
+    wheelCapture(e) {
+        this.setState((state, props) => {
+            var delta = state.offsetY + e.deltaY
+            var comp = <Hello/>
+            if (delta > 2000) comp = <Projects/>
+            else if (delta > 1000) comp = <AboutMe/>
+            console.log(delta)
+
+            return {component: comp, offsetY: delta}
+        })
+    }
+
+    render() {
+        return (
+            <div onWheelCapture={this.wheelCapture}>
+                {this.state.component}
+            </div>
+        );
+    }
 }
 
 export default App;

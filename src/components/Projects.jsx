@@ -1,11 +1,11 @@
 import react from 'react'
 
-function AboutMe() {
+function Projects() {
     return (
         <div className='card'>
-            <h1>About Me</h1>
+            <h1>My Projects</h1>
         </div>
     )
 }
 
-export default AboutMe;
+export default Projects;
