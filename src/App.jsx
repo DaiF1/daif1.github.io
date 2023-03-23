@@ -25,7 +25,6 @@ class App extends React.Component
             var comp = <Hello/>
             if (delta > PROJECTS_FLAG) comp = <Projects/>
             else if (delta > ABOUT_FLAG) comp = <AboutMe/>
-            console.log(delta)
 
             return {component: comp, offsetY: delta}
         })
