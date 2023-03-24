@@ -1,34 +1,51 @@
 import { filterProps } from 'framer-motion';
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
+
+import './hello.css'
 
 function Hello(props) {
-    // the size of the window in the begginning
-    const [windowSize, setWindowSize] = useState({
-        width: window.innerWidth,
-        height: window.innerHeight,
+    const houseRef = useRef(null);
+
+    const [x, setX] = useState();
+    const [y, setY] = useState();
+
+    const getPosition = () => {
+        const x = houseRef.current.offsetLeft;
+        setX(x);
+
+        const y = houseRef.current.offsetTop;
+        setY(y);
+    };
+
+    useEffect(() => {
+        getPosition();
     });
 
-    // we use the useEffect hook to listen to the window resize event
     useEffect(() => {
-        window.onresize = () => {
-            setWindowSize({
-                width: window.innerWidth,
-                height: window.innerHeight,
-            });
-        };
-    }, []);
+        window.addEventListener("resize", getPosition);
+    }, [])
 
     return (
-        <div className="card" style={
+        <div className="card hello-card" style={
             {
-                transformOrigin: `${windowSize.width / 2} 0`,
+                transformOrigin: `${x + 92}px ${y + 80}px`,
                 transform: `scale(${1 + props.delta / 1000})`,
             }
         }>
-            <div>
-                <h1>Hi, I'm DaiF</h1>
+            <div className='hello-text'>
+                <h1 className='hello-title'>Hi, I'm DaiF</h1>
                 <h2 className='subtitle'>A french student in computer science</h2>
+            </div>
+            <div className='house-container' ref={houseRef}>
+                <div className='house-side left-side'></div>
+                <div className='dino' style={
+                    {
+                        left: `${-props.delta / 50 + 120}pt`,
+                        display: `${((-props.delta / 50) < -100) ? "none" : "block"}`
+                    }
+                }></div>
+                <div className='house-side right-side'></div>
             </div>
         </div>
     )

@@ -3,9 +3,9 @@ import Hello from './components/Hello'
 import AboutMe from './components/AboutMe'
 import Projects from './components/Projects'
 
-const ABOUT_FLAG = 2000;
-const PROJECTS_FLAG = 3000;
-const END_OF_PAGE = 4000;
+const ABOUT_FLAG = 16000;
+const PROJECTS_FLAG = 20000;
+const END_OF_PAGE = 30000;
 
 class App extends React.Component
 {
@@ -32,7 +32,12 @@ class App extends React.Component
 
     render() {
         return (
-            <div id='main-page' onWheelCapture={this.wheelCapture}>
+            <div id='main-page' onWheelCapture={this.wheelCapture} style={
+                {
+                    backgroundColor: `${(this.state.offsetY > ABOUT_FLAG) ? "black" : "white"}`
+                }
+            }
+            >
                 {this.state.component}
             </div>
         );

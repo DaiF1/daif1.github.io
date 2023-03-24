@@ -1,0 +1,57 @@
+.hello-card
+{
+    display: grid;
+    justify-content: left;
+    align-items: center
+}
+
+.hello-text
+{
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    height: 100%;
+    margin: 0 200pt;
+}
+
+.hello-title
+{
+    margin: 0;
+}
+
+.house-container
+{
+    position: relative;
+    display: flex;
+    grid-column-start: 2;
+    grid-row-start: 2;
+    bottom: 0;
+    overflow: visible;
+}
+
+.house-side
+{
+    width: 65px;
+    height: 130px;
+    background-color: black;
+}
+
+.right-side
+{
+    z-index: 5;
+}
+
+.left-side
+{
+    z-index: 20;
+}
+
+.dino
+{
+    width: 30pt;
+    height: 50pt;
+    background-color: greenyellow;
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+}
