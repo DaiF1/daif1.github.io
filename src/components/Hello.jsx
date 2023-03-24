@@ -38,11 +38,13 @@ function Hello(props) {
                 <h2 className='subtitle'>A french student in computer science</h2>
             </div>
             <div className='house-container' ref={houseRef}>
+                <div className='house'></div>
                 <div className='house-side left-side'></div>
+                <div className='house-top'></div>
                 <div className='dino' style={
                     {
                         left: `${-props.delta / 50 + 120}pt`,
-                        display: `${((-props.delta / 50) < -100) ? "none" : "block"}`
+                        display: `${((-props.delta / 50) < -120) ? "none" : "block"}`
                     }
                 }></div>
                 <div className='house-side right-side'></div>

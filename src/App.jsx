@@ -11,7 +11,7 @@ class App extends React.Component
 {
     constructor(props) {
         super(props)
-        this.state = {component: <Hello/>, offsetY: 0}
+        this.state = {component: <Hello delta={0}/>, offsetY: 0}
 
         this.wheelCapture = this.wheelCapture.bind(this)
     }
