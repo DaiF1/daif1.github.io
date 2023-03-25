@@ -4,8 +4,8 @@ import AboutMe from './pages/AboutMe'
 import Projects from './pages/Projects'
 
 const ABOUT_FLAG = 16000;
-const PROJECTS_FLAG = 20000;
-const END_OF_PAGE = 30000;
+const PROJECTS_FLAG = 32000;
+const END_OF_PAGE = 48000;
 
 class App extends React.Component
 {
@@ -23,8 +23,8 @@ class App extends React.Component
             else if (delta > END_OF_PAGE) delta = END_OF_PAGE;
 
             var comp = <Hello delta={delta}/>
-            if (delta > PROJECTS_FLAG) comp = <Projects delta={delta}/>
-            else if (delta > ABOUT_FLAG) comp = <AboutMe delta={delta}/>
+            if (delta > PROJECTS_FLAG) comp = <Projects delta={delta - PROJECTS_FLAG}/>
+            else if (delta > ABOUT_FLAG) comp = <AboutMe delta={delta - ABOUT_FLAG}/>
 
             return {component: comp, offsetY: delta}
         })
