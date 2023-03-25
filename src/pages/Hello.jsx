@@ -30,7 +30,7 @@ function Hello(props) {
         <div className="card hello-card" style={
             {
                 transformOrigin: `${x + (window.innerWidth * 5.2 / 100)}px ${y + (window.innerWidth * 5 / 100)}px`,
-                transform: `scale(${1 + props.delta / 1000})`,
+                transform: `scale(${1 + props.delta / 400})`,
             }
         }>
             <div className='hello-text'>
@@ -42,8 +42,8 @@ function Hello(props) {
                 <div className='house-side left-side'></div>
                 <div className='dino' style={
                     {
-                        left: `${-props.delta / 850 + 8}vw`,
-                        display: `${((-props.delta / 50) < -140) ? "none" : "block"}`
+                        left: `${-props.delta / 350 + 8}vw`,
+                        display: `${((-props.delta / 50) < -60) ? "none" : "block"}`
                     }
                 }></div>
                 <div className='house-side right-side'></div>

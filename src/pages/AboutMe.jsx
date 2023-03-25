@@ -2,7 +2,7 @@ import react from 'react'
 
 import './about.css'
 
-const NEXT_PAGE_DELTA = 16000
+const NEXT_PAGE_DELTA = 6000
 
 function AboutMe(props) {
     return (

@@ -3,9 +3,9 @@ import Hello from './pages/Hello'
 import AboutMe from './pages/AboutMe'
 import Projects from './pages/Projects'
 
-const ABOUT_FLAG = 16000;
-const PROJECTS_FLAG = 32000;
-const END_OF_PAGE = 48000;
+const ABOUT_FLAG = 6000;
+const PROJECTS_FLAG = 12000;
+const END_OF_PAGE = 18000;
 
 class App extends React.Component
 {
