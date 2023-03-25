@@ -14,9 +14,11 @@
 
 .dino-about
 {
-    width: 300pt;
-    height: 500pt;
-    background-color: greenyellow;
+    width: 35vw;
+    height: 35vw;
+    background-image: url("/dino.png");
+    background-size: contain;
+    background-repeat: no-repeat;
     bottom: 0;
     grid-column-start: 1;
 }

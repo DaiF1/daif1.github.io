@@ -1,7 +1,7 @@
 body
 {
     font-family: "Cabin";
-    font-size: 16pt;
+    font-size: 1.1vw;
 
     color: #011936;
     margin: 0pt;
@@ -13,14 +13,14 @@ body
 h1
 {
     font-family: "Indie Flower";
-    font-size: 110pt;
+    font-size: 9vw;
     margin-bottom: 0px;
 }
 
 h2
 {
     font-family: "IBM Plex Mono";
-    font-size: 20pt;
+    font-size: 1.4vw;
     width: fit-content;
     height: fit-content;
 }

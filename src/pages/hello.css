@@ -11,7 +11,7 @@
     grid-row-start: 1;
     grid-row-end: 3;
     height: 100%;
-    margin: 0 200pt;
+    margin: 0 13vw;
 }
 
 .hello-title
@@ -31,24 +31,16 @@
 
 .house
 {
-    width: 130px;
-    height: 130px;
-    background-color: black;
+    width: 7vw;
+    height: 7vw;
+    background-color: blue;
     position: absolute;
-}
-
-.house-top
-{
-    width: 50px;
-    height: 50px;
-    background-color: black;
-    z-index: 20;
 }
 
 .house-side
 {
-    width: 40px;
-    height: 130px;
+    width: 3.5vw;
+    height: 7vw;
 }
 
 .right-side
@@ -65,9 +57,14 @@
 
 .dino
 {
-    width: 30pt;
-    height: 50pt;
-    background-color: greenyellow;
+    width: 4vw;
+    height: 3.8vw;
+    transform: scaleX(-1);
+
+    background-image: url("/dino.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+
     position: absolute;
     bottom: 0;
     z-index: 10;
