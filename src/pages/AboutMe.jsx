@@ -2,9 +2,15 @@ import react from 'react'
 
 import './about.css'
 
-function AboutMe() {
+const NEXT_PAGE_DELTA = 16000
+
+function AboutMe(props) {
     return (
-        <div className='card about-card' style={{color: "white"}}>
+        <div className='card about-card' style={
+            {
+                transformOrigin: `100vw 50vw`,
+                transform: `rotate3d(0, 1, 0, ${(props.delta / NEXT_PAGE_DELTA) * 90}deg) translateX(${(props.delta * props.delta) / (NEXT_PAGE_DELTA * 10)}px)`
+            }}>
             <div className='dino-about'></div>
             <div className='about-desc'>
                 <h1>About Me</h1>
