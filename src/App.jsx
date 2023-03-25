@@ -5,7 +5,7 @@ import Projects from './pages/Projects'
 
 const ABOUT_FLAG = 6000;
 const PROJECTS_FLAG = 12000;
-const END_OF_PAGE = 18000;
+const END_OF_PAGE = 12500;
 
 class App extends React.Component
 {
