@@ -1,7 +1,7 @@
 import React from 'react'
-import Hello from './components/Hello'
-import AboutMe from './components/AboutMe'
-import Projects from './components/Projects'
+import Hello from './pages/Hello'
+import AboutMe from './pages/AboutMe'
+import Projects from './pages/Projects'
 
 const ABOUT_FLAG = 16000;
 const PROJECTS_FLAG = 20000;
