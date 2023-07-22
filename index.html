@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,10 +7,45 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM Plex Mono">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DaiF Website</title>
+    <title>DaiF's Website</title>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <div id="main-page">
+        <div id="hello-card" class="card">
+            <div class="hello-text">
+                <h1 class="hello-title">Hi, I'm DaiF</h1>
+                <h2 class="subtitle">A french student in computer science</h2>
+            </div>
+            <div class='house-container'>
+                <div class='house'></div>
+                <div class='house-side left-side'></div>
+                <div id="hello-dino" class='dino'></div>
+                <div class='house-side right-side'></div>
+            </div>
+        </div>
+        <div id="about-card" class='card'>
+            <div id="about-dino" class='dino'></div>
+            <div class='about-desc'>
+                <h1>About Me</h1>
+                <p>This is supposed to be a very long text about me but I don't really know
+                    what to add.
+                </p>
+                <p>
+                    Maybe some skill scales? For thoses things at least:
+                </p>
+                <ul>
+                    <li>HTML/CSS: Unfortunatly, I know how to do front</li>
+                    <li>C (OpenGL/Win32): Well... I love graphics engines</li>
+                    <li>OCaml: It is incredible and I won't allow you to say otherwise</li>
+                    <li>Python: Who can't use python nowaday?</li>
+                    <li>C#: My Unity days</li>
+                </ul>
+            </div>
+        </div>
+        <div id="projects-card" class='card'>
+            <h1>My Projects</h1>
+        </div>
+    </div>
+    <script type="module" src="/main.js"></script>
   </body>
 </html>
