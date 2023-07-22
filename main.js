@@ -23,7 +23,7 @@ addEventListener("wheel", (e) => {
     }
     else if (scroll >= 16000) {
         projectsCard.style.display = "none";
-        aboutCard.style.display = "block";
+        aboutCard.style.display = "grid";
         helloCard.style.display = "none";
     }
     else {
