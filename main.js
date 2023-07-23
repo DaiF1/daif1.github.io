@@ -105,14 +105,15 @@ function showAbout() {
     title.style.marginTop = "-3em";
     title.style.marginBottom = "3em";
 
+    house.style.transform = "scale(3.5)";
+    house.style.transition = "transform 1.5s ease-in";
+
     // Elements appearance
     setTimeout(() => {
         dinoAbout.style.marginLeft = 0;
         dinoAbout.style.marginRight = 0;
         aboutText.style.marginLeft = 0;
         aboutText.style.marginRight = 0;
-        house.style.transform = "scale(3.5)";
-        house.style.transition = "transform 1.5s ease";
     }, TIMEOUT / 3);
 
     // Elements disappearance
