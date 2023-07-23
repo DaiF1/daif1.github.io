@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist -r https://github.com/DaiF1/daif1.github.io",
+    "deploy": "gh-pages -d dist -u DaiF1",
     "preview": "vite preview"
   },
   "devDependencies": {
