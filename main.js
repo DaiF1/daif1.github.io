@@ -21,7 +21,7 @@ function pageSetup() {
     cardsContainer.style.transformOrigin = origin;
 
     // Setup about page position and scale
-    var aboutX = originX - aboutCard.clientWidth / 1.93;
+    var aboutX = originX - aboutCard.clientWidth / 1.935;
     var aboutY = originY - aboutCard.clientHeight / 1.97;
 
     var aboutScale = house.clientWidth / aboutCard.clientWidth;
@@ -46,24 +46,40 @@ var index = 0;
 var scrollFlag = true;
 
 function showHello() {
-    projectsCard.style.display = "none";
     helloCard.style.display = "grid";
 
     cardsContainer.style.transform = `scale(1)`;
+
+    var house = helloCard.querySelector(".house-container");
+    house.style.transformOrigin = "70% 50%";
 
     var dinoHello = helloCard.querySelector("#hello-dino");
     var house = helloCard.querySelector(".house-container");
     var houseDoor = house.querySelector(".left-side");
     dinoHello.style.left = "0vw";
 
+    var dinoAbout = aboutCard.querySelector("#about-dino");
+    dinoAbout.style.marginLeft = "-30vw";
+    dinoAbout.style.marginRight = "30vw";
+    var aboutText = aboutCard.querySelector(".about-desc");
+
+    // Elements appearance
     setTimeout(() => {
         dinoHello.style.opacity = 1;
         dinoHello.style.transform = "scaleX(1)";
         dinoHello.style.left = "8vw";
+
+        house.style.transform = "scale(1)";
+        house.style.transition = "transform 1s ease";
+
+        aboutText.style.marginLeft = "60vw";
+        aboutText.style.marginRight = "-60vw";
     }, TIMEOUT / 3)
 
+    // Elements disappearance
     scrollFlag = false;
     setTimeout(() => {
+        projectsCard.style.display = "none";
         scrollFlag = true;
     }, TIMEOUT);
 }
@@ -75,14 +91,36 @@ function showAbout() {
     var transform = `scale(15)`;
     cardsContainer.style.transform = transform;
 
+    var dinoAbout = aboutCard.querySelector("#about-dino");
+    var aboutText = aboutCard.querySelector(".about-desc");
+
+    var house = helloCard.querySelector(".house-container");
+    house.style.transformOrigin = "80% 50%";
+
     var dinoHello = helloCard.querySelector("#hello-dino");
     dinoHello.style.transform = "scaleX(-1)";
     dinoHello.style.left = "-1vw";
 
+    var title = projectsCard.querySelector("h1");
+    title.style.marginTop = "-3em";
+    title.style.marginBottom = "3em";
+
+    // Elements appearance
+    setTimeout(() => {
+        dinoAbout.style.marginLeft = 0;
+        dinoAbout.style.marginRight = 0;
+        aboutText.style.marginLeft = 0;
+        aboutText.style.marginRight = 0;
+        house.style.transform = "scale(3.5)";
+        house.style.transition = "transform 1.5s ease";
+    }, TIMEOUT / 3);
+
+    // Elements disappearance
     scrollFlag = false;
     setTimeout(() => {
         dinoHello.style.opacity = 0;
         helloCard.style.display = "none";
+        projectsCard.style.overflow = "hidden";
         scrollFlag = true;
     }, TIMEOUT);
 
@@ -92,6 +130,23 @@ function showProjects() {
     projectsCard.style.display = "block"; 
     cardsContainer.style.transform = `scale(20) translate(0, 14px)`;
 
+    projectsCard.style.overflow = "visible";
+    var title = projectsCard.querySelector("h1");
+
+    var dinoAbout = aboutCard.querySelector("#about-dino");
+    dinoAbout.style.marginLeft = "-30vw";
+    dinoAbout.style.marginRight = "30vw";
+    var aboutText = aboutCard.querySelector(".about-desc");
+    aboutText.style.marginLeft = "60vw";
+    aboutText.style.marginRight = "-60vw";
+
+    // Elements appearance
+    setTimeout(() => {
+        title.style.marginTop = 0;
+        title.style.marginBottom = 0;
+    }, TIMEOUT / 3);
+
+    // Elements disappearance
     scrollFlag = false;
     setTimeout(() => {
         aboutCard.style.display = "none";

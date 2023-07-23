@@ -91,6 +91,9 @@ a
     grid-row-start: 2;
     bottom: 0;
     overflow: visible;
+    z-index: 10;
+
+    transition: transform 1.5s ease;
 }
 
 .house
@@ -106,8 +109,15 @@ a
     height: 7vw;
 }
 
+.house-top
+{
+    width: 2.5vw;
+    height: 3vw;
+}
+
 .right-side
 {
+    width: 1vw;
     z-index: 5;
     background-color: black;
 }
@@ -142,6 +152,7 @@ a
     height: 100%;
     margin: 0;
     position: absolute;
+    overflow: hidden;
 }
 
 .about-desc
@@ -149,6 +160,11 @@ a
     width: 100%;
     grid-column-start: 2;
     grid-column-end: 3;
+
+    margin-left: 60vw;
+    margin-right: -60vw;
+
+    transition: margin 1.5s ease;
 }
 
 #about-dino
@@ -157,6 +173,11 @@ a
     height: 35vw;
     bottom: 0;
     grid-column-start: 1;
+
+    margin-left: -30vw;
+    margin-right: 30vw;
+
+    transition: margin 1.5s ease;
 }
 
 #projects-card
@@ -166,4 +187,14 @@ a
     margin: 0;
     position: absolute;
     text-align: center;
+}
+
+#projects-card h1
+{
+    transition: margin 1.5s ease;
+}
+
+#projects-card a
+{
+    display: block;
 }
