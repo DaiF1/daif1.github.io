@@ -33,9 +33,9 @@ function pageSetup() {
     var aboutText = aboutCard.querySelector(".about-desc");
     var textBounds = aboutText.getBoundingClientRect();
 
-    var projectsX = aboutX;
-    var projectsY = aboutY;
-    var projectsScale = aboutScale * 0.8;
+    var projectsX = aboutX + (aboutCard.clientWidth * aboutScale * 0.07);
+    var projectsY = aboutY - (aboutCard.clientHeight * aboutScale * 0.17);
+    var projectsScale = aboutScale * 0.6;
 
     projectsCard.style.transformOrigin = "50% 50%";
     projectsCard.style.transform = `translate(${projectsX}px, ${projectsY}px) scale(${projectsScale})`;
@@ -128,7 +128,7 @@ function showAbout() {
 
 function showProjects() {
     projectsCard.style.display = "block"; 
-    cardsContainer.style.transform = `scale(20) translate(0, 14px)`;
+    cardsContainer.style.transform = `scale(24) translate(0, 14px)`;
 
     projectsCard.style.overflow = "visible";
     var title = projectsCard.querySelector("h1");
