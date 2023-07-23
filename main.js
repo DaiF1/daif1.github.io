@@ -207,7 +207,7 @@ addEventListener("touchend", function(e) {
     var elapsedTime = new Date().getTime() - startTime;
 
     var verticalSwipe = elapsedTime <= allowedTime && Math.abs(distY) >= threshold &&
-        Math.abs(distX) <= 2 * threshold / 3)
+        Math.abs(distX) <= 2 * threshold / 3;
 
     if (verticalSwipe)
         processScroll(dist);
