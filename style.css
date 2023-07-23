@@ -142,6 +142,32 @@ a
     transition: left 1.5s ease;
 }
 
+#down-arrow
+{
+    position: absolute;
+    left: 50%;
+    bottom: 15%;
+    animation: 1s ease 0s infinite floating 
+}
+
+@keyframes floating
+{
+    from
+    {
+        bottom: 15%;
+    }
+
+    50%
+    {
+        bottom: calc(15% + 10px);
+    }
+
+    to
+    {
+        bottom: 15%;
+    }
+}
+
 #about-card
 {
     display: grid;
