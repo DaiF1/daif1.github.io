@@ -18,6 +18,8 @@ jobs:
       - name: Deploy Build
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-          npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+          npm run deploy -- -u "${USER_NAME} ${USER_EMAIL}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USER_EMAIL: ${{ secrets.USER_EMAIL }}
+          USER_NAME: DaiF1
