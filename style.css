@@ -43,6 +43,7 @@ a
 {
     overflow: visible;
     align-self: center;
+    backface-visibility: hidden; /* Remove blur bug on chromium */
 }
 
 .dino
