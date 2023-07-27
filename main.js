@@ -76,16 +76,18 @@ function showHello() {
         aboutText.style.marginRight = "-60vw";
     }, TIMEOUT / 3)
 
+    setTimeout(() => {
+        projectsCard.style.display = "none";
+    }, 1.5 * TIMEOUT / 3);
+
     // Elements disappearance
     scrollFlag = false;
     setTimeout(() => {
-        projectsCard.style.display = "none";
         scrollFlag = true;
     }, TIMEOUT);
 }
 
 function showAbout() {
-    projectsCard.style.display = "flex";
     aboutCard.style.display = "grid";
 
     var transform = `scale(15)`;
@@ -114,6 +116,7 @@ function showAbout() {
         dinoAbout.style.marginRight = 0;
         aboutText.style.marginLeft = 0;
         aboutText.style.marginRight = 0;
+        projectsCard.style.display = "flex";
     }, TIMEOUT / 3);
 
     // Elements disappearance
