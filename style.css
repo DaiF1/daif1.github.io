@@ -67,7 +67,8 @@ a
 {
     display: grid;
     justify-content: left;
-    align-items: center
+    align-items: center;
+    z-index: 20;
 }
 
 .hello-text
@@ -180,6 +181,7 @@ a
     margin: 0;
     position: absolute;
     overflow: hidden;
+    z-index: 15;
 }
 
 .about-desc
@@ -209,11 +211,14 @@ a
 
 #projects-card
 {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100%;
     margin: 0;
     position: absolute;
     text-align: center;
+    z-index: 10;
 }
 
 #projects-card h1
@@ -221,7 +226,29 @@ a
     transition: margin 1.5s ease;
 }
 
-#projects-card a
+#project-wall
+{
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 1;
+    position: relative;
+}
+
+.project
 {
     display: block;
+    background-color: brown;
+    width: 15vw;
+    height: fit-content;
+    font-size: 13pt;
+}
+
+.project p
+{
+    margin: 10px 5px;
+}
+
+.project img
+{
+    width: 10vw;
 }

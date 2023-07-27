@@ -85,7 +85,7 @@ function showHello() {
 }
 
 function showAbout() {
-    projectsCard.style.display = "block";
+    projectsCard.style.display = "flex";
     aboutCard.style.display = "grid";
 
     var transform = `scale(15)`;
@@ -128,7 +128,7 @@ function showAbout() {
 }
 
 function showProjects() {
-    projectsCard.style.display = "block"; 
+    projectsCard.style.display = "flex"; 
     cardsContainer.style.transform = `scale(24) translate(0, 14px)`;
 
     projectsCard.style.overflow = "visible";
