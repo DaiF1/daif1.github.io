@@ -237,10 +237,14 @@ a
 .project
 {
     display: block;
-    background-color: brown;
+    background-color: #ffd89e;
+    border: 20px solid #db965a;
+    border-radius: 20px;
+
+    font-size: 13pt;
+
     width: 15vw;
     height: fit-content;
-    font-size: 13pt;
 }
 
 .project p
