@@ -147,26 +147,42 @@ a
 #down-arrow
 {
     position: absolute;
-    left: 50%;
     bottom: 15%;
-    animation: 1s ease 0s infinite floating 
+    left: 50%;
+
+    text-align: center;
+}
+
+#down-arrow p
+{
+    margin-bottom: 0;
+}
+
+#down-arrow svg
+{
+    margin-top: 0;
+    margin-bottom: 10px;
+    animation: 1s ease 0s infinite floating;
 }
 
 @keyframes floating
 {
     from
     {
-        bottom: 15%;
+        margin-top: 0;
+        margin-bottom: 10px;
     }
 
     50%
     {
-        bottom: calc(15% + 10px);
+        margin-top: 10px;
+        margin-bottom: 0;
     }
 
     to
     {
-        bottom: 15%;
+        margin-top: 0;
+        margin-bottom: 10px;
     }
 }
 
