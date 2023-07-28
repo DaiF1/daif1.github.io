@@ -9,8 +9,6 @@ const aboutCard = document.querySelector("#about-card");
 const projectsCard = document.querySelector("#projects-card");
 
 function pageSetup() {
-    projectsCard.style.display = "none";
-
     // Setup zoom origin
     var house = helloCard.querySelector(".house-container");
     var houseBounds = house.getBoundingClientRect();
@@ -33,12 +31,14 @@ function pageSetup() {
     var aboutText = aboutCard.querySelector(".about-desc");
     var textBounds = aboutText.getBoundingClientRect();
 
-    var projectsX = aboutX + (aboutCard.clientWidth * aboutScale * 0.07);
-    var projectsY = aboutY - (aboutCard.clientHeight * aboutScale * 0.17);
     var projectsScale = aboutScale * 0.6;
+    var projectsX = aboutX + (projectsCard.clientWidth * 0.15) * projectsScale;
+    var projectsY = aboutY - (window.innerHeight / 100);
 
     projectsCard.style.transformOrigin = "50% 50%";
     projectsCard.style.transform = `translate(${projectsX}px, ${projectsY}px) scale(${projectsScale})`;
+
+    projectsCard.style.display = "none";
 }
 
 // Scroll Utils
@@ -131,7 +131,7 @@ function showAbout() {
 }
 
 function showProjects() {
-    projectsCard.style.display = "flex"; 
+    projectsCard.style.display = "flex";
     cardsContainer.style.transform = `scale(24) translate(0, 14px)`;
 
     projectsCard.style.overflow = "visible";
