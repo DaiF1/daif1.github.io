@@ -37,8 +37,6 @@ function pageSetup() {
 
     projectsCard.style.transformOrigin = "50% 50%";
     projectsCard.style.transform = `translate(${projectsX}px, ${projectsY}px) scale(${projectsScale})`;
-
-    projectsCard.style.display = "none";
 }
 
 // Scroll Utils
@@ -216,7 +214,25 @@ addEventListener("touchend", function(e) {
         processScroll(dist);
 }, false);
 
+// Resize event
+window.addEventListener('resize', function () {
+    var currHelloStyle = helloCard.style.display;
+    var currAboutStyle = aboutCard.style.display;
+    var currProjectsStyle = projectsCard.style.display;
+
+    helloCard.style.display = "grid";
+    aboutCard.style.display = "grid";
+    projectsCard.style.display = "flex";
+
+    pageSetup();
+
+    helloCard.style.display = currHelloStyle;
+    aboutCard.style.display = currAboutStyle;
+    projectsCard.style.display = currProjectsStyle;
+})
+
 // Window setup
 window.addEventListener('load', function() {
     pageSetup();
+    projectsCard.style.display = "none";
 })
