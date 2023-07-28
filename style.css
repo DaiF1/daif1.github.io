@@ -1,9 +1,17 @@
+:root
+{
+    --title-font: "Indie Flower";
+    --subtitle-font: "IBM Plex Mono";
+    --text-font: "Cabin";
+    --text-color: #011936;
+}
+
 body
 {
-    font-family: "Cabin";
+    font-family: var(--text-font);
     font-size: 1.1vw;
 
-    color: #011936;
+    color: var(--text-color);
     margin: 0pt;
 
     max-width: 100%;
@@ -12,14 +20,14 @@ body
 
 h1
 {
-    font-family: "Indie Flower";
+    font-family: var(--title-font);
     font-size: 9vw;
     margin-bottom: 0px;
 }
 
 h2
 {
-    font-family: "IBM Plex Mono";
+    font-family: var(--subtitle-font);
     font-size: 1.4vw;
     width: fit-content;
     height: fit-content;
@@ -150,6 +158,7 @@ a
     bottom: 15%;
     left: 50%;
 
+    font-weight: bold;
     text-align: center;
 }
 
@@ -266,6 +275,18 @@ a
 .project p
 {
     margin: 10px 5px;
+}
+
+.project p:not(.project-title)
+{
+    color: var(--text-color);
+}
+
+.project-title
+{
+    font-family: var(--subtitle-font);
+    font-weight: bold;
+    font-size: 1.1vw;
 }
 
 .project img
