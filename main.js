@@ -189,7 +189,6 @@ addEventListener("wheel", (e) => {
 
 // Mobile scroll
 const threshold = 150; // Min distance of swipe
-const allowedTime = 200; // Max time allowed to travel swipe distance
 var startTime;
 var startX;
 var startY;
@@ -199,20 +198,21 @@ addEventListener("touchstart", function(e) {
     startX = ts.pageX;
     startY = ts.pageY;
     startTime = new Date().getTime();
-}, false);
+});
 
 addEventListener("touchend", function(e) {
     var tend = e.changedTouches[0];
     var distX = tend.pageX - startX;
     var distY = tend.pageY - startY;
     var elapsedTime = new Date().getTime() - startTime;
+    console.log(elapsedTime)
 
-    var verticalSwipe = elapsedTime <= allowedTime && Math.abs(distY) >= threshold &&
+    var verticalSwipe = Math.abs(distY) >= threshold &&
         Math.abs(distX) <= 2 * threshold / 3;
 
     if (verticalSwipe)
-        processScroll(dist);
-}, false);
+        processScroll(-distY);
+});
 
 // Resize event
 window.addEventListener('resize', function () {
