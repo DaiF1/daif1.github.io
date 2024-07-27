@@ -6,6 +6,10 @@
     --text-color: #011936;
 }
 
+html, body {
+    overscroll-behavior: none; /* Disable page reload on scroll (mobile) */
+}
+
 body
 {
     font-family: var(--text-font);
