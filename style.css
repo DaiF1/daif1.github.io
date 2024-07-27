@@ -252,28 +252,38 @@ a
 
 #projects-card h1
 {
-    transition: margin 1.5s ease;
+    transition: margin 1.5s ease-out;
 }
 
 #project-wall
 {
     display: flex;
-    justify-content: space-around;
+    justify-content: left;
     flex-grow: 1;
     position: relative;
+    gap: 500pt;
+    overflow: hidden;
 }
 
 .project
 {
     display: block;
+    flex: 0 0 auto;
+
     background-color: #ffd89e;
     border: 20px solid #db965a;
     border-radius: 20px;
 
-    font-size: 13pt;
+    width: 500pt;
+    height: 350pt;
 
-    width: 15vw;
-    height: fit-content;
+    font-size: 18pt;
+}
+
+.project:first-of-type
+{
+    margin-left: calc(50vw - 250pt);
+    transition: margin-left 0.7s ease;
 }
 
 .project p
@@ -290,10 +300,33 @@ a
 {
     font-family: var(--subtitle-font);
     font-weight: bold;
-    font-size: 1.1vw;
+    font-size: 32pt;
 }
 
 .project img
 {
-    width: 10vw;
+    height: 100%;
+    max-height: 70%;
+    object-fit: contain;
+}
+
+.project-arrow
+{
+    position: absolute;
+    top: 175pt;
+
+    background-color: transparent;
+    border: none;
+
+    transition: opacity 0.5s ease;
+}
+
+#project-arrow-left
+{
+    left: calc(50% - 300pt);
+}
+
+#project-arrow-right
+{
+    right: calc(50% - 300pt - 30pt);
 }

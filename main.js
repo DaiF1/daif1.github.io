@@ -8,6 +8,11 @@ const helloCard = document.querySelector("#hello-card");
 const aboutCard = document.querySelector("#about-card");
 const projectsCard = document.querySelector("#projects-card");
 
+let currentProject = 0;
+let projectWall = document.getElementById("project-wall");
+let firstProject = projectWall.querySelector(".project");
+let projectNumber = projectWall.children.length - 2;
+
 function pageSetup() {
     // Setup zoom origin
     var house = helloCard.querySelector(".house-container");
@@ -28,15 +33,45 @@ function pageSetup() {
     aboutCard.style.transform = `translate(${aboutX}px, ${aboutY}px) scale(${aboutScale})`;
 
     // Setup projects page position and scale
-    var aboutText = aboutCard.querySelector(".about-desc");
-    var textBounds = aboutText.getBoundingClientRect();
-
-    var projectsScale = aboutScale * 0.6;
+    var projectsScale = aboutScale * 0.3;
     var projectsX = aboutX + (projectsCard.clientWidth * 0.15) * projectsScale;
     var projectsY = aboutY - (window.innerHeight / 100);
 
     projectsCard.style.transformOrigin = "50% 50%";
     projectsCard.style.transform = `translate(${projectsX}px, ${projectsY}px) scale(${projectsScale})`;
+
+    // Setup project navigation arrows
+    
+    let arrowLeft = document.getElementById("project-arrow-left");
+    let arrowRight = document.getElementById("project-arrow-right");
+
+    arrowLeft.addEventListener("click", () => {
+        currentProject--;
+        // Center of screen - half size of project - index offset - project border
+        firstProject.style.marginLeft = `calc(50vw - 250pt - ${currentProject * 1000}pt - ${currentProject * 40}px)`;
+
+        if (currentProject === 0) {
+            arrowLeft.style.opacity = 0;
+            arrowLeft.disabled = true;
+        }
+
+        arrowRight.disabled = false;
+        arrowRight.style.opacity = 100;
+    });
+
+    arrowRight.addEventListener("click", () => {
+        currentProject++;
+        // Center of screen - half size of project - index offset - project border
+        firstProject.style.marginLeft = `calc(50vw - 250pt - ${currentProject * 1000}pt - ${currentProject * 40}px)`;
+
+        if (currentProject === projectNumber - 1) {
+            arrowRight.style.opacity = 0;
+            arrowRight.disabled = true;
+        }
+
+        arrowLeft.disabled = false;
+        arrowLeft.style.opacity = 100;
+    });
 }
 
 // Scroll Utils
@@ -53,7 +88,6 @@ function showHello() {
 
     var dinoHello = helloCard.querySelector("#hello-dino");
     var house = helloCard.querySelector(".house-container");
-    var houseDoor = house.querySelector(".left-side");
     dinoHello.style.left = "0vw";
 
     var dinoAbout = aboutCard.querySelector("#about-dino");
@@ -102,8 +136,13 @@ function showAbout() {
     dinoHello.style.left = "-1vw";
 
     var title = projectsCard.querySelector("h1");
-    title.style.marginTop = "-3em";
-    title.style.marginBottom = "3em";
+    title.style.marginTop = "-120vh";
+    title.style.marginBottom = "120vh";
+
+    let arrowLeft = document.getElementById("project-arrow-left");
+    let arrowRight = document.getElementById("project-arrow-right");
+    arrowLeft.style.opacity = 0;
+    arrowRight.style.opacity = 0;
 
     house.style.transform = "scale(3.5)";
     house.style.transition = "transform 1.5s ease-in";
@@ -122,18 +161,24 @@ function showAbout() {
     setTimeout(() => {
         dinoHello.style.opacity = 0;
         helloCard.style.display = "none";
-        projectsCard.style.overflow = "hidden";
+        title.style.opacity = 0;
         scrollFlag = true;
     }, TIMEOUT);
 
 }
 
 function showProjects() {
-    projectsCard.style.display = "flex";
-    cardsContainer.style.transform = `scale(24) translate(0, 14px)`;
+    cardsContainer.style.transform = `translate(${projectsCard.clientWidth * 0.41}px, ${window.innerHeight / 1.23}px) scale(48)`;
 
-    projectsCard.style.overflow = "visible";
     var title = projectsCard.querySelector("h1");
+    title.style.opacity = 100;
+
+    let arrowLeft = document.getElementById("project-arrow-left");
+    let arrowRight = document.getElementById("project-arrow-right");
+    arrowLeft.style.opacity = currentProject > 0 ? 100 : 0;
+    arrowRight.style.opacity = currentProject < projectNumber - 1 ? 100 : 0;
+    arrowLeft.disabled = currentProject === 0;
+    arrowRight.disabled = currentProject === projectNumber - 1;
 
     var dinoAbout = aboutCard.querySelector("#about-dino");
     dinoAbout.style.marginLeft = "-30vw";
