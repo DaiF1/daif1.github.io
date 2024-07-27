@@ -215,21 +215,21 @@ addEventListener("touchend", function(e) {
 });
 
 // Resize event
-window.addEventListener('resize', function () {
-    var currHelloStyle = helloCard.style.display;
-    var currAboutStyle = aboutCard.style.display;
-    var currProjectsStyle = projectsCard.style.display;
-
-    helloCard.style.display = "grid";
-    aboutCard.style.display = "grid";
-    projectsCard.style.display = "flex";
-
-    pageSetup();
-
-    helloCard.style.display = currHelloStyle;
-    aboutCard.style.display = currAboutStyle;
-    projectsCard.style.display = currProjectsStyle;
-})
+//window.addEventListener('resize', function () {
+//    var currHelloStyle = helloCard.style.display;
+//    var currAboutStyle = aboutCard.style.display;
+//    var currProjectsStyle = projectsCard.style.display;
+//
+//    helloCard.style.display = "grid";
+//    aboutCard.style.display = "grid";
+//    projectsCard.style.display = "flex";
+//
+//    pageSetup();
+//
+//    helloCard.style.display = currHelloStyle;
+//    aboutCard.style.display = currAboutStyle;
+//    projectsCard.style.display = currProjectsStyle;
+//})
 
 // Window setup
 window.addEventListener('load', function() {
