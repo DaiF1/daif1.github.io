@@ -139,6 +139,14 @@ function showAbout() {
     title.style.marginTop = "-120vh";
     title.style.marginBottom = "120vh";
 
+    let projects = projectsCard.querySelectorAll(".project");
+    for (let proj of projects) {
+        let text = proj.querySelectorAll("p");
+        for (let t of text) {
+            t.style.opacity = 0;
+        }
+    }
+
     let arrowLeft = document.getElementById("project-arrow-left");
     let arrowRight = document.getElementById("project-arrow-right");
     arrowLeft.style.opacity = 0;
@@ -172,6 +180,14 @@ function showProjects() {
 
     var title = projectsCard.querySelector("h1");
     title.style.opacity = 100;
+
+    let projects = projectsCard.querySelectorAll(".project");
+    for (let proj of projects) {
+        let text = proj.querySelectorAll("p");
+        for (let t of text) {
+            t.style.opacity = 100;
+        }
+    }
 
     let arrowLeft = document.getElementById("project-arrow-left");
     let arrowRight = document.getElementById("project-arrow-right");
