@@ -274,17 +274,25 @@ a
     border: 20px solid #db965a;
     border-radius: 20px;
 
+    margin-top: 20px;
+
     width: 500pt;
     height: 350pt;
 
     font-size: 18pt;
     backface-visibility: hidden; /* Remove blur bug on chromium */
+
+    transition: transform 0.3s ease;
+}
+
+.project:hover {
+    transform: scale(1.05);
 }
 
 .project:first-of-type
 {
     margin-left: calc(50vw - 250pt);
-    transition: margin-left 0.7s ease;
+    transition: margin-left 0.7s ease, transform 0.3s ease;
 }
 
 .project p
