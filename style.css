@@ -325,9 +325,53 @@ a
 #project-arrow-left
 {
     left: calc(50% - 300pt);
+    animation: 1s ease 0s infinite float-left;
 }
 
 #project-arrow-right
 {
     right: calc(50% - 300pt - 30pt);
+    animation: 1s ease 0s infinite float-right;
+}
+
+@keyframes float-left
+{
+    from
+    {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+
+    50%
+    {
+        margin-left: 10px;
+        margin-right: 0;
+    }
+
+    to
+    {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+}
+
+@keyframes float-right
+{
+    from
+    {
+        margin-right: 0;
+        margin-left: 10px;
+    }
+
+    50%
+    {
+        margin-right: 10px;
+        margin-left: 0;
+    }
+
+    to
+    {
+        margin-right: 0;
+        margin-left: 10px;
+    }
 }
