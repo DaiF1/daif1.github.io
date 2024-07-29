@@ -278,6 +278,7 @@ a
     height: 350pt;
 
     font-size: 18pt;
+    backface-visibility: hidden; /* Remove blur bug on chromium */
 }
 
 .project:first-of-type
